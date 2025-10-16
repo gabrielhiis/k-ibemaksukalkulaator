@@ -1,1 +1,0 @@
-Tegin käibemaksukalkuka:)
