@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Käibemaksu kalkulaator</title>   
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function arvutus(){
+            let hind = document.getElementById("hind").value;
+            let kmaksp = document.getElementById("maks").value / 100;
+            let kmakssuurus = hind *kmaksp;
+            let tootehind = parseInt(hind) + parseFloat(kmakssuurus);
+            document.getElementById("kmakssuurus").innerHTML = kmakssuurus;
+            document.getElementById("tootehind").innerHTML = tootehind;
+        }
+    </script>
+</head>
+<body>
+    <h1>Käibemaksu kalkulaator</h1>
+    <label for="hind">Hind</label>
+    <input type="number" id="hind" placeholder="Sisesta hind" />
+
+    <label for="maks">KM%</label>
+    <select id="maks">
+        <option value="20">20</option>
+        <option value="22">22</option>
+        <option value="24" selected>24</option>
+        <option value="26">26</option>
+        <option value="28">28</option>
+    </select>
+     
+    <input type="button" value="Arvuta" onclick="arvutus()"/>
+
+    <p id="kmakssuurus">mikk on goat</p>
+    <p id="tootehind"></p>
+
+</body>
+</html>
